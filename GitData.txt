@@ -17,11 +17,13 @@ git init
 git status
 
 5.将文件加入到仓库:
+git diff		//看看文件做了哪些变化
+git checkout -- .	//想撤销这些更改
 git add .
-git add -A
-		//命令  git add .   将项目中未被跟踪的文件都加入到仓库中，它不提交这些文件，而只是让git开始关注他们
+git add -A		//命令  git add .   将项目中未被跟踪的文件都加入到仓库中，它不提交这些文件，而只是让git开始关注他们
 
 6.执行提交:
+6.1清除未追踪的文件
 git commit -m "Started project"	//执行 git commit -m "提交信息"  将文件提交到repository里。提交信息用英文的双引号括起来。
 
 7.查看提交历史:
