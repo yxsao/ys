@@ -1,8 +1,8 @@
 1.配置:
 git config --global  user.name "ysao"
 git config --global  user.email "ysao@git.com"		//Git需要知道你的用户名和电子邮件
-  		//注意git config命令的--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，
-		//当然也可以对某个仓库指定不同的用户名和Email地址。
+  		#注意git config命令的--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，
+		#当然也可以对某个仓库指定不同的用户名和Email地址。
 
 2.创建项目:
 mkdir  learngit   #创建文件learngit
@@ -10,8 +10,7 @@ cd  learngit       #进入learngit文件里面
 pwd                #显示learngit的存在目录
 
 3.初始化仓库:
-git init
-		//如果你没有看到.git目录，那是因为这个目录默认是隐藏的，用ls -ah命令就可以看见
+git init		//如果你没有看到.git目录，那是因为这个目录默认是隐藏的，用ls -ah命令就可以看见
 
 4.检查状态:
 git status
@@ -35,7 +34,10 @@ git reset --hard 1df0573	//开始回退，执行 git reset --hard 1df0573 （取
 
 9.远程仓库GitHub
 git remote add origin git@github.com:yxsao/ys.git	//添加仓库 master
-git remote	//查看当前哪些远程仓库					
+git remote	//查看当前哪些远程仓库	
+git pull origin master	//如果你在创建 repository 的时候，加入了 README.md 或者 LICENSE ，那么 github 会拒绝你的 push 。你需要先执行 	
+git push -u origin master 	//将本地仓库上传至Github的仓库并进行关联：	
+git push		//关联已经完成！以后想在commit后同步到Github上，只要直接执行 git push 就行啦：		
 git fetch		//从远程仓库下载新分支与数据
 该命令执行完后需要执行 git merge 远程分支到你所在的分支。
 git merge		//从远端仓库提取数据并尝试合并到当前分支
@@ -43,5 +45,4 @@ git merge		//从远端仓库提取数据并尝试合并到当前分支
 git add GitData.txt 
 git commit -m "添加到远程仓库"
 git push master master	//git push origin master    # 推送到 Github
-
 
